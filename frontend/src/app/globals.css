@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07111f;
+  --foreground: #e5eefb;
+  --panel: rgba(8, 15, 31, 0.72);
+  --panel-strong: rgba(11, 21, 43, 0.92);
+  --border: rgba(148, 163, 184, 0.18);
+  --muted: #94a3b8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 28%),
+    linear-gradient(180deg, #07111f 0%, #0a1322 42%, #030712 100%);
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: #fff;
+}
+
+.glass-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+}
+
+.glass-panel-strong {
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(24px);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #e5eefb 0%, #38bdf8 48%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
